@@ -67,15 +67,17 @@ for page in range(1,MAX_PAGES+1):
         if max_seen is None or ts > max_seen:
             max_seen = ts
 
-    all_records.extend(data)
-    print(f"page {page}: {len(data)} records")
+    print(f"page {page}: {len(data)} records, {len(kept)} kept so far")
+    if stop_after_page:
+        break
 
     url = next_link(response=response)
     params = None
     if url is None:
         break
 
-    print()
+if max_seen is not None:
+    save_watermark(max_seen)
 
 print(f"total records = {len(all_records)}")
 print(f"last id = {all_records[-1]['id']}" if all_records else "no records")
