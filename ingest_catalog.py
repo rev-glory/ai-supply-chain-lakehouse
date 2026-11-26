@@ -196,8 +196,10 @@ for fetch_result in fetch_results :
     })
 
 # Writing files to Bronze
-write_jsonl_gz(BRONZE_MODELS_PATH, model_rows)
-write_jsonl_gz(BRONZE_REPO_FILES_PATH, repo_file_rows)
+if model_rows:
+    write_jsonl_gz(BRONZE_MODELS_PATH, model_rows)
+if repo_file_rows:
+    write_jsonl_gz(BRONZE_REPO_FILES_PATH, repo_file_rows)
 
 # Saving the latest watermark and exit
 if new_watermark is not None:
