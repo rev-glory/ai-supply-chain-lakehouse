@@ -1,1 +1,235 @@
+
+# =====================================================
+# PYTHON
+# =====================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# =====================================================
+# VIRTUAL ENVIRONMENTS
+# =====================================================
+venv/
+.venv/
+env/
+ENV/
+virtualenv/
+.python-version
+
+# =====================================================
+# DATASETS & BIG DATA FILES
+# =====================================================
 data/
+datasets/
+raw_data/
+processed_data/
+interim_data/
+external_data/
+output/
+outputs/
+results/
+artifacts/
+warehouse/
+datalake/
+checkpoints/
+
+# Large data files
+*.csv
+*.tsv
+*.parquet
+*.avro
+*.orc
+*.feather
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.mat
+*.arrow
+*.db
+*.sqlite
+*.sqlite3
+
+# Compressed data
+*.zip
+*.tar
+*.gz
+*.bz2
+*.7z
+*.rar
+
+# =====================================================
+# JUPYTER NOTEBOOKS
+# =====================================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+jupyter_runtime/
+*.nbconvert.ipynb
+
+# =====================================================
+# APACHE SPARK / HADOOP
+# =====================================================
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+*.class
+logs/
+log/
+*.log
+tmp/
+temp/
+hadoop_data/
+namenode/
+datanode/
+
+# =====================================================
+# MACHINE LEARNING / DEEP LEARNING
+# =====================================================
+mlruns/
+mlartifacts/
+wandb/
+.tensorboard/
+runs/
+lightning_logs/
+checkpoints/
+models/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.pb
+*.h5
+*.keras
+*.joblib
+*.safetensors
+
+# =====================================================
+# ENVIRONMENT VARIABLES & SECRETS
+# =====================================================
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.crt
+*.cer
+secrets/
+credentials/
+service-account*.json
+config/secrets.*
+
+# =====================================================
+# IDE & EDITORS
+# =====================================================
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.spyderproject
+.spyproject/
+.ropeproject/
+
+# =====================================================
+# OPERATING SYSTEM FILES
+# =====================================================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =====================================================
+# LOGS & TEMPORARY FILES
+# =====================================================
+*.log
+*.out
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+*.old
+*.pid
+*.seed
+
+# =====================================================
+# DOCKER / CONTAINERS
+# =====================================================
+.docker/
+docker-data/
+
+# =====================================================
+# AIRFLOW / WORKFLOW ORCHESTRATION
+# =====================================================
+airflow.db
+airflow.cfg
+airflow-webserver.pid
+airflow-scheduler.pid
+__pycache__/
+
+# =====================================================
+# DBT / DATA ENGINEERING
+# =====================================================
+target/
+dbt_packages/
+logs/
+profiles.yml
+
+# =====================================================
+# TESTING & COVERAGE
+# =====================================================
+htmlcov/
+.coverage
+coverage.xml
+nosetests.xml
+junit.xml
+test-results/
+
+# =====================================================
+# DOCUMENTATION BUILD
+# =====================================================
+docs/_build/
+site/
+
+# =====================================================
+# PACKAGE / DEPENDENCY MANAGERS
+# =====================================================
+Pipfile.lock
+poetry.lock
+pdm.lock
+
+# =====================================================
+# MISCELLANEOUS
+# =====================================================
+*.DS_Store
+*.swp
+*.swo
+*.orig
+*.rej
+.cache/
+.cache-loader/
+.parcel-cache/
