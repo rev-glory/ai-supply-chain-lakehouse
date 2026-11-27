@@ -1,14 +1,22 @@
-import requests
-import time
-import os
-import json
-import hashlib
 import gzip
-from datetime import datetime, timedelta, timezone
+import hashlib
+import json
+import os
 import random
-from uuid import uuid4
+import time
 from collections import Counter
-from ingestion.state_store import get_watermark, set_watermark, start_run, finish_run, connect
+from datetime import UTC, datetime, timedelta
+from uuid import uuid4
+
+import requests
+
+from ingestion.state_store import (
+    connect,
+    finish_run,
+    get_watermark,
+    set_watermark,
+    start_run,
+)
 
 MAX_REPOS = 10
 OVERLAP_MINUTES = 15
@@ -20,7 +28,7 @@ HUB_ROOT = "https://huggingface.co"
 
 FIRST_PAGE_PARAMS = {"sort": "lastModified", "direction": -1, "limit": 20}
 
-RUN_STARTED_AT = datetime.now(timezone.utc)
+RUN_STARTED_AT = datetime.now(UTC)
 PARTITION_DATE = RUN_STARTED_AT.strftime("%Y-%m-%d")
 RUN_ID = RUN_STARTED_AT.strftime("%Y%m%dT%H%M%SZ") + uuid4().hex[:8]
 

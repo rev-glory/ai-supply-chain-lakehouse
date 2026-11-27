@@ -11,6 +11,7 @@ import gzip
 import json
 from collections import Counter
 
+
 # Reading data from zip files and return them as rows
 def read_rows(pattern):
     rows = []

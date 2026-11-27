@@ -1,12 +1,12 @@
-import sqlite3
 import os
-from datetime import datetime, timezone
+import sqlite3
+from datetime import UTC, datetime
 
 DATABASE_PATH = 'data/state/state.db'
 
 # Helper Method
 def _now():
-    return datetime.now(timezone.utc).isoformat()
+    return datetime.now(UTC).isoformat()
 
 # Date value checker
 def _require_aware(value):
@@ -54,7 +54,11 @@ def set_watermark(entity, value):
     
     with sqlite3.connect(DATABASE_PATH) as conn:
         conn.execute("""
-            INSERT INTO watermarks VALUES (? , ? , ?) 
+            INSERT INTO watermarks (entity, last_modified, updated_at)
+            VALUES (?, ?, ?)
+            ON CONFLICT(entity) DO UPDATE SET
+                last_modified = excluded.last_modified,
+                updated_at    = excluded.updated_at
         """, (entity, value.isoformat(), _now()))
 
 # Create a new run record and store as running in database
